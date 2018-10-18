@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/gorilla/mux"
+	"log"
+	"net/http"
+)
+
+func RootHandle(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "Hello! I'm future Simple API")
+}
 
 func main() {
-	fmt.Println("Hello, World! I am the future of Simple API")
+	router := mux.NewRouter()
+	router.HandleFunc("/", RootHandle)
+
+	log.Fatal(http.ListenAndServe(":8081", router))
 }
