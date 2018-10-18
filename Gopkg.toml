@@ -25,10 +25,9 @@
 #   unused-packages = true
 
 [[constraint]]
-    name = "https://github.com/gorilla/mux"
+    name = "github.com/gorilla/mux"
     branch = "master"
-    source = "https://github.com/gorilla/mux"
-    revision = "deb579d"
+    source = "https://github.com/gorilla/mux.git"
 
 [prune]
   go-tests = true
